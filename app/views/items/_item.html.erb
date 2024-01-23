@@ -14,24 +14,23 @@
     <%= item.notes %>
   </p>
 
+  <% if @container_item %>
   <p>
-    <strong>Item:</strong>
-    <%= item.item_id %>
+    <strong>Container item:</strong>
+    <%= @container_item.name %>
   </p>
+  <% end %>
 
+  <% if @location %>
   <p>
-    <strong>Container:</strong>
-    <%= item.container %>
+    <strong>Location:</strong>
+    <%= @location.name %>
   </p>
+  <% end %>
 
   <p>
     <strong>Weight:</strong>
     <%= item.weight %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= item.location_id %>
   </p>
 
 </div>

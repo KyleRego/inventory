@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_23_084110) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_23_084749) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_23_084110) do
     t.text "description"
     t.text "notes"
     t.bigint "item_id"
-    t.boolean "container"
+    t.boolean "container", default: false, null: false
     t.float "weight"
     t.bigint "location_id"
     t.datetime "created_at", null: false

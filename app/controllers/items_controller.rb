@@ -8,13 +8,19 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @location = @item.location
+    @container_item = @item.item
   end
 
   def new
     @item = Item.new
+    @container_items = Item.where(container: true)
+    @locations = Location.all
   end
 
   def edit
+    @container_items = Item.where(container: true)
+    @locations = Location.all
   end
 
   def create
@@ -54,7 +60,7 @@ class ItemsController < ApplicationController
 
   private
     def set_item
-      @item = Item.find(params[:id])
+      @item = Item.includes(:location, :item).find(params[:id])
     end
 
     def item_params
