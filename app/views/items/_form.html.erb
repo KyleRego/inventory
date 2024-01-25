@@ -1,6 +1,6 @@
 <%= form_with(model: item) do |form| %>
   <% if item.errors.any? %>
-    <div style="color: red">
+    <div>
       <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
       <ul>
@@ -12,22 +12,22 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
 
   <div>
-    <%= form.label :notes, style: "display: block" %>
+    <%= form.label :notes %>
     <%= form.text_area :notes %>
   </div>
 
   <div>
-    <%= form.label :container, style: "display: block" %>
+    <%= form.label :container %>
     <%= form.check_box :container %>
   </div>
 
@@ -42,7 +42,7 @@
   </div>
 
   <div>
-    <%= form.label :weight, style: "display: block" %>
+    <%= form.label :weight %>
     <%= form.text_field :weight %>
   </div>
 

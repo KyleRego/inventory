@@ -1,6 +1,6 @@
 <%= form_with(model: location) do |form| %>
   <% if location.errors.any? %>
-    <div style="color: red">
+    <div>
       <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
 
       <ul>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
 
