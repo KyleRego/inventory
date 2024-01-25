@@ -1,25 +1,22 @@
+# frozen_string_literal: true
+
 class LocationsController < ApplicationController
   before_action :set_location, only: %i[ show edit update destroy ]
 
-  # GET /locations or /locations.json
   def index
     @locations = Location.all
   end
 
-  # GET /locations/1 or /locations/1.json
   def show
   end
 
-  # GET /locations/new
   def new
     @location = Location.new
   end
 
-  # GET /locations/1/edit
   def edit
   end
 
-  # POST /locations or /locations.json
   def create
     @location = Location.new(location_params)
 
@@ -34,7 +31,6 @@ class LocationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /locations/1 or /locations/1.json
   def update
     respond_to do |format|
       if @location.update(location_params)
@@ -47,7 +43,6 @@ class LocationsController < ApplicationController
     end
   end
 
-  # DELETE /locations/1 or /locations/1.json
   def destroy
     @location.destroy
 
@@ -58,12 +53,10 @@ class LocationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_location
       @location = Location.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def location_params
       params.require(:location).permit(:name, :description)
     end
