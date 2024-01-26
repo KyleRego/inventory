@@ -1,3 +1,7 @@
 .border-style-groove {
     border-style: groove;
 }
+
+.border-style-ridge {
+    border-style: ridge;
+}

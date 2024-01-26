@@ -54,6 +54,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "pry"
   gem "shoulda-matchers"
+  gem "rails_live_reload"
 end
 
 group :development do
