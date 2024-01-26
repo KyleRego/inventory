@@ -2,10 +2,10 @@
 
 <h1 class="fs-8 text-align-center border-bottom-4 border-style-groove">Locations</h1>
 
-<div id="locations" class="text-align-center mt-2 flex flex-row flex-wrap">
+<div id="locations" class="text-align-center mt-4 flex flex-row flex-wrap justify-evenly">
   <% @locations.each do |location| %>
 
-    <div id="<%= dom_id location %>" class="border-around-2 border-style-ridge">
+    <div id="<%= dom_id location %>" class="border-around-2 border-style-ridge mb-4">
       <div class="p-2">
         <div class="fs-5">
           <%= location.name %>
@@ -20,4 +20,6 @@
   <% end %>
 </div>
 
-<%= link_to "New location", new_location_path %>
+<div class="text-align-center mt-4">
+  <%= link_to "New location", new_location_path %>
+</div>
