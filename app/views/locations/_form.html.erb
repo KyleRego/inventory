@@ -1,27 +1,23 @@
 <%= form_with(model: location) do |form| %>
-  <% if location.errors.any? %>
-    <div>
-      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
+  <div class="p-4">
+    <% if location.errors.any? %>
+      <div>
+        <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
 
-      <ul>
-        <% location.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+          <% location.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
-  </div>
 
-  <div>
     <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
+    <%= form.text_area :description, rows: 4 %>
+    
     <%= form.submit %>
   </div>
 <% end %>
