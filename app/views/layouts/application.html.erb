@@ -10,7 +10,24 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="m-4 p-1 font-gill-sans">
-    <%= yield %>
+  <body class="font-gill-sans">
+    <header class="bg-red h-8 p-2 flex align-items-center">
+      <span>
+        <%= render partial: "layouts/heroicons/cube",
+              locals: { css_class: "inline w-8 h-8" } %>
+      </span>
+
+      <span>| Inventory |</span>
+
+      <nav class="flex-1">
+        <ul class="flex justify-end">
+          <%= yield :page_specific_nav %>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="ml-4 mr-4 mb-4 pl-1 pr-1 pb-1">
+      <%= yield %>
+    </main>
   </body>
 </html>

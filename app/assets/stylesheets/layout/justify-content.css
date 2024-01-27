@@ -9,3 +9,11 @@
 .justify-evenly {
     justify-content: space-evenly;
 }
+
+.justify-start {
+    justify-content: start;
+}
+
+.justify-end {
+    justify-content: end;
+}

@@ -1,10 +1,17 @@
 <p><%= notice %></p>
 
-<%= render @location %>
+<div id="<%= dom_id @location %>">
+  <h1 class="fs-8"><%= @location.name %></h1>
+
+  <div>
+    <%= @location.description %> | <%= link_to "Edit", edit_location_path(@location) %>
+  </div>
+
+  <div>
+    <%= button_to "Delete location", @location, method: :delete, class: "inline" %>
+  </div>
+</div>
 
 <div>
-  <%= link_to "Edit this location", edit_location_path(@location) %> |
   <%= link_to "Back to locations", locations_path %>
-
-  <%= button_to "Destroy this location", @location, method: :delete %>
 </div>

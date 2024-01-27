@@ -1,7 +1,7 @@
+<%= content_for :page_specific_nav do %>
+  <li class="inline"><%= link_to "Back to locations", locations_path %></li>
+<% end %>
+
 <h1 class="fs-8 text-align-center border-bottom-4 border-style-groove">New location</h1>
 
 <%= render "form", location: @location %>
-
-<div class="text-align-center mt-4">
-  <%= link_to "Back to locations", locations_path %>
-</div>
