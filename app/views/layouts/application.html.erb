@@ -21,6 +21,8 @@
 
       <nav class="flex-1">
         <ul class="flex justify-end">
+          <li class="inline mr-4"><%= link_to "New location", new_location_path, class: "text-link" %></li>
+          <li class="inline mr-4"><%= link_to "New item", new_item_path, class: "text-link" %></li>
           <%= yield :page_specific_nav %>
         </ul>
       </nav>

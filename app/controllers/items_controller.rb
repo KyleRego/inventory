@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @container_items = Item.where(container: true)
     @locations = Location.all
   end
 

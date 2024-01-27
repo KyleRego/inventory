@@ -1,7 +1,3 @@
-<%= content_for :page_specific_nav do %>
-  <li class="inline"><%= link_to "New location", new_location_path, class: "text-link" %></li>
-<% end %>
-
 <p><%= notice %></p>
 
 <div class="p-2">
@@ -16,16 +12,16 @@
           class="box-link
                   inline-block text-align-center cursor-pointer
                   border-around-2 border-style-ridge
-                  flex flex-col justify-around
+                  flex justify-around
                   flex-1
                   min-w-32 ml-2 mr-2 mb-4 p-4">
-        <div>
-          <div class="fs-6">
+        <div class="flex flex-col">
+          <div class="fs-6 border-bottom-2 border-style-ridge">
             <%= location.name %>
           </div>
 
-          <div>
-            <%= location.description %>
+          <div class="justify-around flex-1 p-4">
+            <span><%= location.description.truncate(200) %></span>
           </div>
 
           <div>
@@ -35,4 +31,14 @@
       </a>
     <% end %>
   </div>
+
+  <% if @unlocated_items&.any? %>
+  <h2 class="fs-5 mb-4">
+    Unlocated items
+  </h2>
+
+  <div id="unlocated-items" class="flex flex-wrap">
+
+  </div>
+  <% end %>
 </div>

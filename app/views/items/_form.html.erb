@@ -1,52 +1,42 @@
 <%= form_with(model: item) do |form| %>
-  <% if item.errors.any? %>
-    <div>
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+  <div class="p-4">
+    <% if item.errors.any? %>
+      <div>
+        <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-        <% item.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% item.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="flex justify-start mb-2">
+      <%= form.label :container, class: "mr-4" %>
+      <%= form.check_box :container %>
     </div>
-  <% end %>
 
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="flex justify-start mb-2">
+      <%= form.label :location_id, class: "mr-4" %>
+      <%= form.select :location_id, @locations.map { |l| [ l.name, l.id ] }, { include_blank: true } %>
+    </div>
 
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="mb-1">
+      <%= form.label :name %>
+      <%= form.text_field :name, required: true %>
+    </div>
 
-  <div>
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
-  </div>
+    <div class="mb-1">
+      <%= form.label :description %>
+      <%= form.text_area :description, required: true %>
+    </div>
 
-  <div>
-    <%= form.label :container %>
-    <%= form.check_box :container %>
-  </div>
-
-  <div>
-    <%= form.label :item_id %>
-    <%= form.select :item_id, @container_items.map { |ci| [ci.name, ci.id] }, include_blank: true %>
-  </div>
-
-  <div>
-    <%= form.label :location_id %>
-    <%= form.select :location_id, @locations.map { |l| [ l.name, l.id ] }, { include_blank: true } %>
-  </div>
-
-  <div>
-    <%= form.label :weight %>
-    <%= form.text_field :weight %>
-  </div>
-
-  <div>
+    <div class="mb-1">
+      <%= form.label :notes %>
+      <%= form.text_area :notes %>
+    </div>
+  
     <%= form.submit %>
   </div>
 <% end %>
