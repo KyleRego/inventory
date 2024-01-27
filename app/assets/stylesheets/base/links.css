@@ -1,0 +1,12 @@
+.text-link {
+    color: rgb(0, 0, 0);
+    text-decoration: underline dotted;
+}
+
+.text-link:hover, .text-link:focus {
+    font-weight: bold;
+}
+
+.box-link:hover, .box-link:focus {
+    background-color: rgb(169, 231, 255);
+}

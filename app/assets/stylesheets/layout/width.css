@@ -6,10 +6,18 @@
     width: 2rem;
 }
 
+.w-auto {
+    width: auto;
+}
+
 .width-max-content {
     width: max-content;
 }
 
 .width-full {
     width: 100%;
+}
+
+.width-half {
+    width: 50%;
 }
