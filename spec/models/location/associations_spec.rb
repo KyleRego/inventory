@@ -3,5 +3,5 @@
 RSpec.describe Location do
   subject { Location.new }
 
-  it { should have_many(:items) }
+  it { should have_many(:items).dependent(:nullify) }
 end
