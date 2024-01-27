@@ -33,12 +33,16 @@
   </div>
 
   <% if @unlocated_items&.any? %>
-  <h2 class="fs-5 mb-4">
-    Unlocated items
-  </h2>
+  <div class="p-2">
+    <h2 class="fs-5 mb-2">
+      Unlocated items:
+    </h2>
 
-  <div id="unlocated-items" class="flex flex-wrap">
-
+    <div id="unlocated-items">
+      <% @unlocated_items.each do |uitem| %>
+        <%= uitem.name %>
+      <% end %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
