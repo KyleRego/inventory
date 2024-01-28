@@ -11,15 +11,17 @@
   </head>
 
   <body class="font-gill-sans">
-    <header class="bg-light-gray header-box-shadow h-12 p-4 mb-4 flex align-items-center">
-      <span>
-        <%= render partial: "layouts/heroicons/cube",
-              locals: { css_class: "inline w-8 h-8" } %>
-      </span>
+    <header class="bg-light-gray header-box-shadow h-12 p-4 mb-4 flex justify-between align-items-center">
+      <div class="inline">
+        <span class="mr-2">
+          <%= render partial: "layouts/heroicons/cube",
+                locals: { css_class: "inline w-8 h-8" } %>
+        </span>
 
-      <span class="fs-5">| Inventory |</span>
+        <span class="fs-5 mr-4">Inventory</span>
+      </div>
 
-      <nav class="flex-1">
+      <nav class="flex-1 sm-hidden">
         <ul class="flex justify-end">
           <li class="inline mr-4"><%= link_to "New location", new_location_path, class: "text-link" %></li>
           <li class="inline mr-4"><%= link_to "New item", new_item_path, class: "text-link" %></li>
@@ -27,6 +29,11 @@
           <li class="inline mr-4"><%= link_to "Items", items_path, class: "text-link" %></li>
         </ul>
       </nav>
+
+      <span class="mr-2 sm-show">
+        <%= render partial: "layouts/heroicons/hamburger",
+              locals: { css_class: "inline w-8 h-8" } %>
+      </span>
     </header>
 
     <main class="ml-4 mr-4 mb-4 pl-1 pr-1 pb-1">
