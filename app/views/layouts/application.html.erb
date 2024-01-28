@@ -31,16 +31,18 @@
       </nav>
 
       <div class="inline mr-2 sm-show" data-controller="hamburger">
-        <button type="button" data-action="click->hamburger#show" title="Show navigation menu">
+        <button type="button" data-hamburger-target="showButton" title="Show navigation menu">
           <%= render partial: "layouts/heroicons/hamburger",
                       locals: { css_class: "inline w-8 h-8" } %>
         </button>
 
-        <div data-hamburger-target="menu" hidden>
-          <button type="button" data-action="click->hamburger#hide" title="Hide navigation menu">
-            <%= render partial: "layouts/heroicons/hamburger",
-                        locals: { css_class: "inline w-8 h-8" } %>
-          </button>
+        <div class="position-fixed invisible top-4 right-4 bg-dark-white p-2" data-hamburger-target="menu">
+          <div class="flex justify-end">
+            <button type="button" data-hamburger-target="hideButton" title="Hide navigation menu">
+              <%= render partial: "layouts/heroicons/x",
+                          locals: { css_class: "inline w-8 h-8" } %>
+            </button>
+          </div>
           <ul>
             <li><%= link_to "New location", new_location_path, class: "text-link" %></li>
             <li><%= link_to "New item", new_item_path, class: "text-link" %></li>
