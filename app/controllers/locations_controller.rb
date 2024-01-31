@@ -8,6 +8,8 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @inventories = @location.items.where(container: true)
+    @items = @location.items.where(container: false)
   end
 
   def new

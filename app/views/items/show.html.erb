@@ -6,5 +6,6 @@
   <%= link_to "Edit this item", edit_item_path(@item) %> |
   <%= link_to "Back to items", items_path %>
 
-  <%= button_to "Destroy this item", @item, method: :delete %>
+  <%= button_to "Destroy this item", @item, method: :delete, class: "danger-button",
+        form: { data: { turbo_confirm: "Are you sure you want to delete #{@item.name}?"} } %>
 </div>

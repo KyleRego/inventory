@@ -1,13 +1,58 @@
 <p><%= notice %></p>
 
 <div id="<%= dom_id @location %>">
-  <h1 class="fs-8"><%= @location.name %></h1>
+  <div class="flex justify-between align-items-center mb-2">
+    <h1 class="fs-8"><%= @location.name %></h1>
 
-  <div>
-    <%= @location.description %> | <%= link_to "Edit location", edit_location_path(@location), class: "text-link" %>
+    <div class="flex">
+      <%= link_to "Edit location", edit_location_path(@location), class: "text-link mr-4" %>
+
+      <%= button_to "Delete location", @location, method: :delete, class: "inline danger-button",
+              form: { data: { turbo_confirm: "Are you sure you want to delete #{@location.name}?"} } %>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <%= @location.description %>
+  </div>
+
+  <div class="flex justify-between align-items-center">
+    <h2 class="fs-6">Inventories</h2>
+
+    <span class="text-link">New inventory (todo)</span>
+  </div>
+
+  <div class="mb-2 flex flex-wrap">
+    <% @inventories.each do |inventory| %>
+      <a class="box-link
+              inline-block text-align-center cursor-pointer flex flex-col
+              border-around-2 border-style-ridge
+              flex justify-left"
+              
+          href="<%= item_path inventory %>">
+        <div class="pl-4 pr-4 pt-2 pb-2 flex flex-col justify-start">
+          <div>
+            <%= inventory.name %>
+          </div>
+
+          <div>
+            <%= inventory.description %>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+
+  <div class="flex justify-between align-items-center">
+    <h2 class="fs-6">Items</h2>
+
+    <span class="text-link">New item (todo)</span>
   </div>
 
   <div>
-    <%= button_to "Delete location", @location, method: :delete, class: "inline" %>
+    <% @items.each do |item| %>
+      <%= item.name %>
+    <% end %>
   </div>
+
 </div>

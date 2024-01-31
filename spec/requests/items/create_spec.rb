@@ -8,7 +8,7 @@ RSpec.describe "POST /items", "#create" do
   end
 
   let(:params) do
-    { item: { name:, description:, notes:, item_id:, container:, weight:, location_id: } }
+    { item: { name:, description:, notes:, item_id:, container:, location_id: } }
   end
 
   let(:name) { "name of item" }
@@ -16,7 +16,6 @@ RSpec.describe "POST /items", "#create" do
   let(:notes) { "some notes about the item" }
   let(:item_id) { nil }
   let(:container) { false }
-  let(:weight) { 5.5 }
   let(:location_id) { nil }
 
   it "creates an item" do

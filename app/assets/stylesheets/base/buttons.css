@@ -1,0 +1,7 @@
+.danger-button {
+    color: red;
+}
+
+.danger-button:hover, .danger-button:focus {
+    font-weight: bold;
+}
