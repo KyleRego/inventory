@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LocationsController < ApplicationController
-  before_action :set_location, only: %i[ show edit update destroy ]
+  before_action :set_location, only: %i[ show edit update destroy new_item new_inventory ]
 
   def index
     @locations = Location.all
@@ -14,6 +14,14 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+  end
+
+  def new_item
+    @item = Item.new
+  end
+
+  def new_inventory
+    @item = Item.new
   end
 
   def edit

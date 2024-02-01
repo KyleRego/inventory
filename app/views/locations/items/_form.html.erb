@@ -1,0 +1,36 @@
+<%= form_with(model: item, url: location_items_path(@location)) do |form| %>
+  <div>
+    <% if item.errors.any? %>
+      <div>
+        <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+        <ul>
+          <% item.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-1">
+      <%= form.label :name %>
+      <%= form.text_field :name, required: true %>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label :description %>
+      <%= form.text_area :description, required: true %>
+    </div>
+
+    <div class="mb-1">
+      <%= form.label :notes %>
+      <%= form.text_area :notes %>
+    </div>
+
+    <%= form.hidden_field :location_id, value: @location.id %>
+
+    <%= form.hidden_field :container, value: is_container %>
+  
+    <%= form.submit %>
+  </div>
+<% end %>
