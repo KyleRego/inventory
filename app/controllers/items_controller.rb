@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   def edit
     @container_items = Item.where(container: true)
+    @location = @item.location
     @locations = Location.all
   end
 

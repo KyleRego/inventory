@@ -1,5 +1,5 @@
 <%= form_with(model: location) do |form| %>
-  <div class="p-4">
+  <div>
     <% if location.errors.any? %>
       <div>
         <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>

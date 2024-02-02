@@ -1,8 +1,8 @@
 <%= form_with(model: item) do |form| %>
-  <div class="p-4">
+  <div>
     <% if item.errors.any? %>
       <div>
-        <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+        <h2><%= pluralize(item.errors.count, "error") %> prevented this item from being saved:</h2>
 
         <ul>
           <% item.errors.each do |error| %>
@@ -13,7 +13,7 @@
     <% end %>
 
     <div class="flex justify-start mb-2">
-      <%= form.label :container, class: "mr-4" %>
+      <%= form.label :container, "Inventory", class: "mr-4" %>
       <%= form.check_box :container %>
     </div>
 

@@ -2,7 +2,7 @@
   <div>
     <% if item.errors.any? %>
       <div>
-        <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+        <h2><%= pluralize(item.errors.count, "error") %> prevented this item from being saved:</h2>
 
         <ul>
           <% item.errors.each do |error| %>

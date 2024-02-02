@@ -1,8 +1,13 @@
-<h1>Editing item</h1>
+<h1 class="fs-8 mb-4">
+  Editing item <a class="text-link" href="<%= item_path(@item) %>">
+                  <%= @item.name %>
+                </a>
+            at <a class="text-link" href="<%= location_path(@location) %>">
+                  <%= @location.name %>
+                </a>
+</h1>
 
 <%= render "form", item: @item %>
-
-<br>
 
 <div>
   <%= link_to "Show this item", @item %> |
