@@ -33,36 +33,25 @@ class LocationsController < ApplicationController
 
     @location.picture.attach(params[:picture]) if params[:picture]
 
-    respond_to do |format|
-      if @location.save
-        format.html { redirect_to location_url(@location), notice: "Location #{@location.id} was successfully created." }
-        format.json { render :show, status: :created, location: @location }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
-      end
+    if @location.save
+      redirect_to location_url(@location), notice: "Location #{@location.id} was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    respond_to do |format|
-      if @location.update(location_params)
-        format.html { redirect_to location_url(@location), notice: "Location #{@location.id} was successfully updated." }
-        format.json { render :show, status: :ok, location: @location }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
-      end
+    if @location.update(location_params)
+      redirect_to location_url(@location), notice: "Location #{@location.id} was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @location.destroy
 
-    respond_to do |format|
-      format.html { redirect_to locations_url, notice: "Location #{@location.id} was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to locations_url, notice: "Location #{@location.id} was successfully destroyed."
   end
 
   private
