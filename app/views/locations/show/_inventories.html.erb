@@ -11,9 +11,13 @@
             border-around-2 border-style-ridge"
         href="<%= item_path inventory %>">
 
-              <div class="pl-4 pr-4 pt-2 pb-2 flex flex-col justify-start">
+              <div class="pl-4 pr-4 pt-2 pb-2 flex flex-col justify-between">
                 <div>
                   <%= inventory.name %>
+                </div>
+
+                <div>
+                  <%= inventory.items.count %> items
                 </div>
               </div>
 

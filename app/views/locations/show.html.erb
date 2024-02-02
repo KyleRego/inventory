@@ -1,6 +1,8 @@
 <p><%= notice %></p>
 
 <div id="<%= dom_id @location %>">
+  <%= render partial: "locations/show/heading" %>
+
   <%= render partial: "locations/show/location" %>
 
   <%= render partial: "locations/show/inventories" %>

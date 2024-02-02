@@ -1,0 +1,12 @@
+<div class="flex justify-between align-items-center mb-2">
+  <h1 class="fs-8">
+    <%= @location.name %>
+  </h1>
+
+  <div class="flex">
+      <%= link_to "Edit location", edit_location_path(@location), class: "text-link mr-4" %>
+
+      <%= button_to "Delete location", @location, method: :delete, class: "inline danger-button",
+              form: { data: { turbo_confirm: "Are you sure you want to delete #{@location.name}?"} } %>
+  </div>
+</div>

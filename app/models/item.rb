@@ -3,4 +3,6 @@
 class Item < ApplicationRecord
   belongs_to :item, optional: true
   belongs_to :location, optional: true
+
+  has_many :items, dependent: :nullify
 end
