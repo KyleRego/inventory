@@ -27,10 +27,14 @@
       <%= form.text_area :notes %>
     </div>
 
+    <div class="mb-1">
+      <%= form.file_field :picture, title: "Add a picture" %>
+    </div>
+  
+    <%= form.submit %>
+
     <%= form.hidden_field :location_id, value: @location.id %>
 
     <%= form.hidden_field :container, value: is_container %>
-  
-    <%= form.submit %>
   </div>
 <% end %>

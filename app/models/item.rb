@@ -5,4 +5,6 @@ class Item < ApplicationRecord
   belongs_to :location, optional: true
 
   has_many :items, dependent: :nullify
+
+  has_one_attached :picture
 end

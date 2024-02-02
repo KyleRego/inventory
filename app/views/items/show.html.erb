@@ -6,27 +6,5 @@
 
   <%= render partial: "items/show/item" %>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @item.description %>
-  </p>
-
-  <p>
-    <strong>Notes:</strong>
-    <%= @item.notes %>
-  </p>
-
-  <% if @container_item %>
-  <p>
-    <strong>Container item:</strong>
-    <%= @container_item.name %>
-  </p>
-  <% end %>
-
-  <% if @location %>
-  <p>
-    <strong>Location:</strong>
-    <%= @location.name %>
-  </p>
-  <% end %>
+  <%= render partial: "items/show/picture" %>
 </div>

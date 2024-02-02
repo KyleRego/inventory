@@ -22,6 +22,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
 
+    @item.picture.attach(params[:picture]) if params[:picture]
+
     if @item.save
       redirect_to item_url(@item), notice: "Item was successfully created."
     else
@@ -40,7 +42,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
 
-    redirect_to items_url, notice: "Item was successfully destroyed."
+    redirect_to locations_url, notice: "Item was successfully destroyed."
   end
 
   private
@@ -49,6 +51,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:name, :description, :notes, :item_id, :container, :location_id)
+      params.require(:item).permit(:name, :description, :notes, :item_id, :container, :location_id, :picture)
     end
 end
