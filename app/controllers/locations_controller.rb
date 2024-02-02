@@ -30,6 +30,8 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(location_params)
 
+    @location.picture.attach(params[:picture]) if params[:picture]
+
     respond_to do |format|
       if @location.save
         format.html { redirect_to location_url(@location), notice: "Location #{@location.id} was successfully created." }
@@ -68,6 +70,6 @@ class LocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:name, :description)
+      params.require(:location).permit(:name, :description, :picture)
     end
 end

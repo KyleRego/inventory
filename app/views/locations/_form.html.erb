@@ -12,11 +12,19 @@
       </div>
     <% end %>
 
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div class="mb-1">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
 
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 4 %>
+    <div class="mb-1">
+      <%= form.label :description %>
+      <%= form.text_area :description, rows: 4 %>
+    </div>
+
+    <div class="mb-1">
+      <%= form.file_field :picture, title: "Add a picture" %>
+    </div>
 
     <%= form.submit %>
   </div>

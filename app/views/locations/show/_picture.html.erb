@@ -1,0 +1,7 @@
+<% picture = @location.picture %>
+
+<% if picture&.representable? %>
+  <div class="mt-4 flex justify-center">
+    <div><%= image_tag picture.representation(resize_to_limit: [500, 400]) %></div>
+  </div>
+<% end %>
