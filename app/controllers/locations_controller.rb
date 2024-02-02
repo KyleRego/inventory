@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
+    @unlocated_items = Item.all.where(location_id: nil)
   end
 
   def show

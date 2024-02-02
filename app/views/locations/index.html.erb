@@ -3,32 +3,11 @@
 <div class="p-2">
   <h1 class="fs-8 mb-4
         ml-auto mr-auto width-half text-align-center
-        border-bottom-4 border-style-groove">Locations</h1>
+        border-bottom-4 border-style-groove">
+    Locations
+  </h1>
 
-  <div id="locations" class="flex flex-wrap">
-    <% @locations.each do |location| %>
-      <a id="<%= dom_id location %>"
-          href="<%= location_path(location) %>"
-          class="box-link
-                  inline-block text-align-center cursor-pointer
-                  border-around-2 border-style-ridge
-                  flex justify-around
-                  flex-1
-                  min-w-32 ml-2 mr-2 mb-4 p-4">
-        <div class="flex flex-col">
-          <div class="fs-6 border-bottom-2 border-style-ridge">
-            <%= location.name %>
-          </div>
+  <%= render partial: "locations/index/locations" %>
 
-          <div class="justify-around flex-1 p-4">
-            <span><%= location.description.truncate(200) %></span>
-          </div>
-
-          <div>
-            <%= location.items.count %> items
-          </div>
-        </div>
-      </a>
-    <% end %>
-  </div>
+  <%= render partial: "locations/index/unlocated_items" %>
 </div>

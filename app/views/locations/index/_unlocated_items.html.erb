@@ -1,0 +1,13 @@
+<% if @unlocated_items.any? %>
+  <h2>
+    Unlocated items:
+  </h2>
+
+  <div class="flex justify-start">
+    <% @unlocated_items.each do |uitem| %>
+      <div>
+        <a class="text-link" href="<%= edit_item_path(uitem) %>"><%= uitem.name %></a>
+      </div>
+    <% end %>
+  </div>
+<% end %>
