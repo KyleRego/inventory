@@ -1,0 +1,21 @@
+<div class="flex justify-between align-items-center mb-2">
+  <h1 class="fs-8">
+      <%= @item.name %>
+      <% if @location %>
+      at <a class="text-link" href="<%= location_path(@location) %>">
+                        <%= @location.name %>
+                      </a>
+      <% end %>
+  </h1>
+
+  <div class="flex justify-around flex-1">
+              <%= link_to "Edit this item", edit_item_path(@item), class: "text-link" %>
+
+              <%= button_to "Destroy this item", @item,
+                      method: :delete,
+                      class: "danger-button",
+                      form:
+  { data: { turbo_confirm: "Are you sure you want to delete #{@item.name}?"} }
+      %>
+  </div>
+</div>
