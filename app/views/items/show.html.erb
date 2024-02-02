@@ -6,5 +6,9 @@
 
   <%= render partial: "items/show/item" %>
 
+  <% if @item.container %>
+    <%= render partial: "items/show/items" %>
+  <% end %>
+
   <%= render partial: "items/show/picture" %>
 </div>

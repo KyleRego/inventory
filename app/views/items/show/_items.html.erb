@@ -1,0 +1,21 @@
+<h2 class="fs-6 mb-2">There are <%= @items.count %> items in this inventory:</h2>
+
+<div class="flex flex-wrap mb-2">
+  <% @items.each do |item| %>
+    <a class="box-link
+            inline-block text-align-center cursor-pointer flex flex-col justify-left flex-auto
+            border-around-2 border-style-ridge"
+        href="<%= item_path(item) %>">
+
+                      <div class="pl-4 pr-4 pt-2 pb-2 flex flex-col justify-start">
+                        <div>
+                          <%= item.name %>
+                        </div>
+                      </div>
+
+    </a>
+  <% end %>
+
+</div>
+
+<%= link_to "Edit inventory", edit_inventory_path(@item), class: "text-link" %>

@@ -11,10 +11,6 @@
   <div class="flex justify-around flex-1">
               <%= link_to "Edit this item", edit_item_path(@item), class: "text-link" %>
 
-              <% if @item.container %>
-                <%= link_to "Edit inventory", edit_inventory_path(@item), class: "text-link" %>
-              <% end %>
-
               <%= button_to "Destroy this item", @item,
                       method: :delete,
                       class: "danger-button",

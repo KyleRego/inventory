@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @location = @item.location
-    @container_item = @item.item
+    @items = @item.items
   end
 
   def new
@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @container_items = Item.where(container: true)
     @location = @item.location
     @locations = Location.all
   end

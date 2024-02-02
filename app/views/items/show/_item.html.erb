@@ -1,13 +1,15 @@
-<p>
-  <strong>Description:</strong><%= @item.description %>
-</p>
-
-<p>
-  <strong>Notes:</strong><%= @item.notes %>
-</p>
-
-<% if @location %>
+<div class="mb-2">
   <p>
-    <strong>Location:</strong><%= @location.name %>
+    <strong>Description: </strong><%= @item.description %>
   </p>
-<% end %>
+
+  <p>
+    <strong>Notes: </strong><%= @item.notes %>
+  </p>
+
+  <% if @location %>
+    <p>
+      <strong>Location: </strong><%= @location.name %>
+    </p>
+  <% end %>
+</div>
