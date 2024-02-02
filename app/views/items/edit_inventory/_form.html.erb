@@ -1,7 +1,7 @@
 <%= form_with(model: @item, url: inventory_items_path(@item)) do |form| %>
   <h2 class="fs-5">Select the items in this inventory:</h2>
   <div class="mb-2">
-    <%= collection_check_boxes(:inventory, :item_ids, @items, :id, :name) do |b| %>
+    <%= collection_check_boxes(:item, :item_ids, @items, :id, :name, { selected: @selected_items_ids }) do |b| %>
       <div class="flex justify-start mb-1">
         <%= b.check_box class: "mr-2" %>
         <%= b.label %>

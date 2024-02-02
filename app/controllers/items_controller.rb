@@ -28,12 +28,14 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+
+    @selected_items_ids = @item.items.pluck(:id).to_a
   end
 
   def inventory_items
     redirect_to item_path(@item) unless @item.container
 
-    selected_items = Item.where(id: params[:inventory][:item_ids])
+    selected_items = Item.where(id: params[:item][:item_ids])
     @item.items = selected_items
 
     redirect_to item_path(@item)
