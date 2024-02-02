@@ -1,0 +1,10 @@
+<h1 class="fs-8 mb-2">
+  Editing inventory: <a class="text-link" href="<%= item_path(@item) %>">
+                  <%= @item.name %>
+                </a>
+          <% if @location %>
+            at <a class="text-link" href="<%= location_path(@location) %>">
+                  <%= @location.name %>
+                </a>
+          <% end %>
+</h1>

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :set_item, only: %i[ show edit edit_inventory inventory_items update destroy ]
 
   def show
     @location = @item.location
@@ -17,6 +17,27 @@ class ItemsController < ApplicationController
     @container_items = Item.where(container: true)
     @location = @item.location
     @locations = Location.all
+  end
+
+  def edit_inventory
+    redirect_to item_path(@item) unless @item.container
+
+    @location = @item.location
+
+    if @location
+      @items = @location.items
+    else
+      @items = Item.all
+    end
+  end
+
+  def inventory_items
+    redirect_to item_path(@item) unless @item.container
+
+    selected_items = Item.where(id: params[:inventory][:item_ids])
+    @item.items = selected_items
+
+    redirect_to item_path(@item)
   end
 
   def create
