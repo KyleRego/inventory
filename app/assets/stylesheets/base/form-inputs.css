@@ -1,16 +1,15 @@
 input[type="text"], textarea {
-    background-color: rgba(236, 221, 221, 0.591);
+    background-color: white;
+    border: 1px solid black;
     padding: 0.25rem;
     width: 100%;
 }
 
 input[type="submit"] {
     display: block;
+    border: 1px solid black;
     padding: 0.25rem;
     cursor: pointer;
-    box-shadow: gray 2px 2px;
-    border-radius: 10%;
-    background-color: rgba(236, 221, 221, 0.591);
 }
 
 label {
@@ -18,5 +17,5 @@ label {
 }
 
 select {
-    background-color: rgba(236, 221, 221, 0.591);
+    border: 1px solid black;
 }

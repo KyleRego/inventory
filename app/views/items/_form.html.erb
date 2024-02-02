@@ -19,7 +19,7 @@
 
     <div class="flex justify-start mb-2">
       <%= form.label :location_id, class: "mr-4" %>
-      <%= form.select :location_id, @locations.map { |l| [ l.name, l.id ] }, { include_blank: true } %>
+      <%= form.select :location_id, @locations.map { |l| [ l.name, l.id ] }, { include_blank: true, selected: @location&.id } %>
     </div>
 
     <div class="mb-1">
