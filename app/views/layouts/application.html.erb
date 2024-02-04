@@ -35,13 +35,12 @@
                       locals: { css_class: "inline w-8 h-8" } %>
         </button>
 
-        <div class="position-fixed invisible top-4 right-4 bg-dark-white p-2" data-hamburger-target="menu">
-          <div class="flex justify-end">
-            <button type="button" data-hamburger-target="hideButton" title="Hide navigation menu">
-              <%= render partial: "layouts/heroicons/x",
-                          locals: { css_class: "inline w-8 h-8" } %>
-            </button>
-          </div>
+        <button class="display-none" type="button" data-hamburger-target="hideButton" title="Hide navigation menu">
+          <%= render partial: "layouts/heroicons/x",
+                      locals: { css_class: "inline w-8 h-8" } %>
+        </button>
+
+        <div class="position-fixed display-none top-12 right-4 bg-dark-white p-2 border-around-2 border-style-solid" data-hamburger-target="menu">
           <ul>
             <li><%= link_to "New location", new_location_path, class: "text-link" %></li>
             <li><%= link_to "New item", new_item_path, class: "text-link" %></li>

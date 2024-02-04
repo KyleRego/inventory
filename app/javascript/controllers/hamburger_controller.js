@@ -10,12 +10,14 @@ export default class extends Controller {
   }
 
   show() {
-    this.menuTarget.classList.remove("invisible");
-    this.showButtonTarget.classList.add("invisible");
+    this.menuTarget.classList.remove("display-none");
+    this.showButtonTarget.classList.add("display-none");
+    this.hideButtonTarget.classList.remove("display-none");
   }
 
   hide() {
-    this.menuTarget.classList.add("invisible");
-    this.showButtonTarget.classList.remove("invisible");
+    this.menuTarget.classList.add("display-none");
+    this.showButtonTarget.classList.remove("display-none");
+    this.hideButtonTarget.classList.add("display-none");
   }
 }
