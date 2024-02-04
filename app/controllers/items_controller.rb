@@ -71,7 +71,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
 
-    redirect_to locations_url, notice: "Item was successfully destroyed."
+    redirect_to locations_url, notice: "Item was successfully deleted."
   end
 
   private
