@@ -34,6 +34,7 @@ RSpec.describe "PATCH /items/:id", "#update" do
     expect(item.description).to eq(new_description)
     expect(item.notes).to eq(new_notes)
     expect(item.container).to eq(new_container_bool)
+    expect(flash[:notice]).to eq "Item was successfully updated."
   end
 
   context "when updating an inventory to not be an inventory" do
@@ -48,6 +49,7 @@ RSpec.describe "PATCH /items/:id", "#update" do
       patch_update
 
       expect(contained_item.reload.item).to be_nil
+      expect(flash[:notice]).to eq "Item was successfully updated. Any contained items were removed."
     end
   end
 end

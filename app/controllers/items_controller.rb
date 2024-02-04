@@ -54,12 +54,15 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
-      if @item.container == false
-        @item.items.update(item_id: nil)
-      end
+    was_inventory = @item.container
 
-      redirect_to item_url(@item), notice: "Item was successfully updated."
+    if @item.update(item_params)
+      if was_inventory && (@item.container == false)
+        @item.items.update(item_id: nil)
+        redirect_to item_url(@item), notice: "Item was successfully updated. Any contained items were removed."
+      else
+        redirect_to item_url(@item), notice: "Item was successfully updated."
+      end
     else
       render :edit, status: :unprocessable_entity
     end
